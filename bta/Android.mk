@@ -10,11 +10,6 @@ LOCAL_CFLAGS += \
 endif
 LOCAL_CFLAGS += -DBUILDCFG $(bdroid_CFLAGS)
 
-#Fix bluetooth for example on Manta
-ifeq ($(BOARD_HAVE_BLUETOOTH_NO_STRICT),true)
- LOCAL_CFLAGS += -fno-strict-aliasing
-endif
-
 LOCAL_PRELINK_MODULE:=false
 LOCAL_SRC_FILES:= \
     ./dm/bta_dm_ci.c \
